@@ -1,10 +1,16 @@
 #!/bin/bash
-#tomcat: start/stop/restart/status tomcat
-#date 2016-08-31
-#author : Bruce
-#version:  v1.0 
+#----------------------------------------------------------
+# Name:         tomcat绠＄悊鑴氭湰
+# Purpose:      tomcat: start/stop/restart/status tomcat
+# Version:      1.0
+# Author:       Bruce
+# EMAIL:        530308461@qq.com
+# Created:      2016-08-31
+# Copyright:    (c) Bruce 2016
+# Liunx:        centos 6
+#----------------------------------------------------------
   
-#--调用functions方法 
+#--This line of code must
 . /etc/rc.d/init.d/functions
 
 tomcat_home="/home/www/tomcat-7.0.68"
