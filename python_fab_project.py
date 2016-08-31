@@ -20,7 +20,7 @@ from ilogue.fexpect import expect, expecting, run
 
 env.user = 'root'
 env.hosts = ['192.168.0.2']
-env.password = 'Jsh315_docker'
+env.password = 'passwd'
 
 
 env.project_dev_source = '/home/git/jsh_model_api' #本地git包位置
