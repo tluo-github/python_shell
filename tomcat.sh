@@ -7,7 +7,7 @@
 # EMAIL:        530308461@qq.com
 # Created:      2016-08-31
 # Copyright:    (c) Bruce 2016
-# Liunx:        centos 6
+# Liunx:        centos 6 tomcat 6,7,8
 #----------------------------------------------------------
   
 #--This line of code must
