@@ -13,6 +13,7 @@
     3. 编写python脚本(py_hostinfos.py)调用salt api接口 使用自定义的hostinfo.py 展示
 
 实现流程:
+
      1. 安装saltstack 详见官网:https://repo.saltstack.com/#rhel
      2. 可以在本机同时安装 salt-master salt-minion(建议可以使用虚拟机多搞几个方便看效果)
      3. 在master和minion分别配置/etc/salt/master,/etc/salt/minion 使其在master机上 使用命令 # salt "*" test.ping 成功
