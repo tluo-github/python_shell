@@ -28,7 +28,8 @@ class hostdata(object):
     def formatcpuinfo(self,cpuinfolist):
         '''
         返回格式化后CPU使用率,获取2个采样点,计算其差值
-        算法：cpu usage=(idle2-idle1)/(cpu2-cpu1)*100
+        算法1：cpu usage=(idle2-idle1)/(cpu2-cpu1)*100 这个有个BUG 当 idle2 == idle1 的时候就是0
+        算法2：cpu usage=[(user_2 +sys_2+nice_2) - (user_1 + sys_1+nice_1)]/(total_2 - total_1)*100
         '''
         cpuone = cpuinfolist[0]['cpu']
         cputwo = cpuinfolist[1]['cpu']
@@ -38,9 +39,17 @@ class hostdata(object):
         total_2 = cputwo['softirq'] + cputwo['irq'] + cputwo['system'] + cputwo['idle'] + cputwo['user'] + cputwo[
             'iowait'] + cputwo['nice']
 
-        total_cpu = float(total_2 - total_1)
-        total_idle = float(cputwo['idle'] - cpuone['idle'])
-        cpu_usage = ("%.2f " % (total_idle / total_cpu))
+        total_result =  float(total_2 - total_1)
+        #print total_result
+
+        total_two = cputwo['user'] + cputwo['system'] + cputwo['nice']
+        total_one = cpuone['user'] + cpuone['system'] + cpuone['nice']
+        result = float(total_two - total_one)
+        #print result
+
+
+
+        cpu_usage = ("%.2f " % (result / total_result))
         cpuitems = {}
         cpuitems['cpu_usage'] = cpu_usage
         return cpuitems
