@@ -27,7 +27,7 @@ class hostdata(object):
 
     def formatcpuinfo(self,cpuinfolist):
         '''
-        获取CPU使用率,获取2个采样点,计算其差值
+        返回格式化后CPU使用率,获取2个采样点,计算其差值
         算法：cpu usage=(idle2-idle1)/(cpu2-cpu1)*100
         '''
         cpuone = cpuinfolist[0]['cpu']
@@ -64,7 +64,7 @@ class hostdata(object):
         return memitems;
 
     def formatnetworkinfo(self,netinfolist):
-        '''获取网络的入口流量和出口流量'''
+        '''返回格式化后网络的入口流量和出口流量'''
         network_in = 0
         network_out = 0
         for j in netinfolist:
@@ -78,7 +78,7 @@ class hostdata(object):
         return networkitems
 
     def formatdiskinfo(self,diskinfolist):
-        '''获取磁盘使用情况'''
+        '''返回格式化后磁盘使用情况'''
         print diskinfolist
 #数据库操作
 class DbHelp(object):
