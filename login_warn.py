@@ -50,7 +50,7 @@ def get_now_date_time():
 
 if __name__ == '__main__':
     problem_server_list = []
-    temp_string = 'IP:120.55.85.46  主机名:[%s]  \n有用户登录! at %s \nwho: \n' % (hostname,get_now_date_time())
+    temp_string = 'IP:X.X.X.X 主机名:[%s]  \n有用户登录! at %s \nwho: \n' % (hostname,get_now_date_time())
     who_string = commands.getoutput('who')
     problem_server_list.append(temp_string)
     problem_server_list.append(who_string)
